@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	layout:decorate="~{layout/padrao}"
+>
+	<head>
+		<title th:text="#{index.titulo}">Título</title>
+	</head>
+	
+	<body>
+	
+		<div layout:fragment="content">
+			<div class="page-header">
+				<h1 th:text="#{index.saudacao(${#authentication.principal.username})}"></h1>
+			</div>
+	
+			<p th:text="#{index.informacao}">
+				Informação
+			</p>
+		</div>	
+	</body>
+</html>
